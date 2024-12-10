@@ -2,7 +2,7 @@ import pandas as pd
 import streamlit as st
 
 # タイトル
-st.title("売上データの推移")
+st.title("売上データの推移 (棒グラフ)")
 
 # Excelファイルの読み込み
 file_path = "data.xlsx"  # GitHubにアップロードされたExcelファイル
@@ -17,5 +17,5 @@ filtered_df = df[(df["日付"] >= "2024-12-01") & (df["日付"] <= "2024-12-03")
 # フィルタリングしたデータを表示
 st.write("指定期間のデータ", filtered_df)
 
-# グラフの描画
-st.line_chart(filtered_df.set_index("日付")["売上"])
+# グラフの描画 (棒グラフ)
+st.bar_chart(filtered_df.set_index("日付")["売上"])
